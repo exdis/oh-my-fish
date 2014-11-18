@@ -31,6 +31,7 @@ set __bobthefish_detached_glyph          \u27A6
 set __bobthefish_nonzero_exit_glyph      '! '
 set __bobthefish_superuser_glyph         '$ '
 set __bobthefish_bg_job_glyph            '% '
+set __bobthefish_hg_glyph                \u263F
 
 # Colors
 set __bobthefish_lt_green   addc10
@@ -235,6 +236,9 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   end
 
   __bobthefish_path_segment (__bobthefish_project_dir_hg)
+
+  __bobthefish_start_segment $flag_bg $flag_fg
+  echo -n -s $__bobthefish_hg_glyph ' '
 
   __bobthefish_start_segment $flag_bg $flag_fg
   set_color $flag_fg --bold
